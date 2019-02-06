@@ -36,7 +36,7 @@ public class StudentDAO {
         int status=0;  
         try{  
             Connection con=StudentDAO.getConnection();  
-            PreparedStatement ps=con.prepareStatement("insert into Students(student_name,student_addr,student_age,student_qual,student_percent,student_year_passed) values (?,?,?,?,?,?)");  
+            PreparedStatement ps=con.prepareStatement("insert into students(student_name,student_addr,student_age,student_qual,student_percent,student_year_passed) values (?,?,?,?,?,?)");  
             ps.setString(1,std.getStudentName());  
             ps.setString(2,std.getStudentAddr());  
             ps.setString(3,std.getAge());  
@@ -55,7 +55,7 @@ public class StudentDAO {
         int status=0;  
         try{  
             Connection con=StudentDAO.getConnection();  
-            PreparedStatement ps=con.prepareStatement("update Students set student_name=?,student_addr=?,student_age=?,student_qual=?,student_percent=?,student_year_passed=? where student_id=?");  
+            PreparedStatement ps=con.prepareStatement("update students set student_name=?,student_addr=?,student_age=?,student_qual=?,student_percent=?,student_year_passed=? where student_id=?");  
             ps.setString(1,std.getStudentName());  
             ps.setString(2,std.getStudentAddr());  
             ps.setString(3,std.getAge());  
@@ -75,7 +75,7 @@ public class StudentDAO {
         int status=0;  
         try{  
             Connection con=StudentDAO.getConnection();  
-            PreparedStatement ps=con.prepareStatement("delete from Students where student_id=?");  
+            PreparedStatement ps=con.prepareStatement("delete from students where student_id=?");  
             ps.setInt(1,stdId);  
             status=ps.executeUpdate();  
               
@@ -89,7 +89,7 @@ public class StudentDAO {
           
         try{  
             Connection con=StudentDAO.getConnection();  
-            PreparedStatement ps=con.prepareStatement("select * from Students where student_id=?");  
+            PreparedStatement ps=con.prepareStatement("select * from students where student_id=?");  
             ps.setInt(1,StdId);  
             ResultSet rs=ps.executeQuery();  
             if(rs.next()){  
@@ -112,7 +112,7 @@ public class StudentDAO {
           
         try{  
             Connection con=StudentDAO.getConnection();  
-            PreparedStatement ps=con.prepareStatement("select * from Students");  
+            PreparedStatement ps=con.prepareStatement("select * from students");  
             ResultSet rs=ps.executeQuery();  
             while(rs.next()){  
             	Student student=new Student();  
