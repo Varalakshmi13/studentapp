@@ -15,7 +15,7 @@ div.ex {
 }
 </style>
 <body>
-	<h1>Student Registration Form - 4.0</h1>
+	<h1>Student Registration Form - 5.0</h1>
 	<div class="ex">
 		<form action="registrationController" method="post">
 			<table style="with: 50%">
